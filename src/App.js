@@ -1,28 +1,45 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import './styles.css';
+import './modalStyles.css';
+
+import MovieModal from './components/MovieModal.js';
+import SearchField from './components/SearchField.js';
+import DisplayElements from './components/DisplayElements.js';
+
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			data: [],
+		};
+	}
+
+	updateData(newData) {
+		this.setState({
+			data: newData,
+		});
+	}
+
+	render() {
+		return (
+			<div>
+				<MovieModal
+					show={this.state.displayModal}
+					movieID={this.state.movieID}
+				/>
+				<div>
+					<center>
+						<h3 className="pageTitle" style={{ color: '#ffffff' }}>
+							Movie Info App
+						</h3>
+					</center>
+					<SearchField updateData={this.updateData.bind(this)} />
+					<DisplayElements data={this.state.data} />
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;
