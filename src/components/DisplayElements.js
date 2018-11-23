@@ -7,38 +7,38 @@ class DisplayElements extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			displayModal: false,
-			movieID: '',
+			movieID: [],
 		};
-		this.toggleModal = this.toggleModal.bind(this);
 	}
 
-	toggleModal = movie => {
+	updateMovieID = movie => {
 		this.setState({
-			displayModal: !this.state.displayModal,
 			movieID: movie.imdbID,
 		});
 	};
 
 	render() {
+		let foundMovies = this.props.data;
+		console.log('state of display element', this.state.movieID);
 		return (
 			<div className="container displayElements">
 				<div className="row flex">
-					<MovieModal
-						show={this.state.displayModal}
-						movieID={this.state.movieID}
-					/>
-					{this.props.data
-						? this.props.data.map(movie => (
-								<div className="col hoverable">
+					{foundMovies.map(movie => (
+						<div
+							className="col hoverable"
+							onClick={this.updateMovieID.bind(this, movie)}
+						>
+							<MovieModal
+								movieID={this.state.movieID}
+								domElement={
 									<img
 										className="z-depth-4 responsive-img"
 										src={movie.Poster}
-										onClick={this.toggleModal.bind(this, movie)}
 									/>
-								</div>
-						  ))
-						: ''}
+								}
+							/>
+						</div>
+					))}
 				</div>
 			</div>
 		);

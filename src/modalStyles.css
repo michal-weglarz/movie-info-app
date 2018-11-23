@@ -1,59 +1,59 @@
 .modal {
-  font-family: "Montserrat";
-  z-index: 9999;
+	font-family: 'Montserrat';
+	z-index: 9999;
 }
 
 .modal > .row {
-  padding: 2.5em;
-  margin-top: 0;
-  margin-bottom: 0;
+	padding: 2.5em;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .closeModal {
-  position: absolute;
-  top: 0;
-  right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .closeModal i {
-  cursor: pointer;
-  font-size: 2em;
-  /* border: 2px solid black;
-  border-radius: 100%; */
+	cursor: pointer;
+	font-size: 2em;
+	/* border: 2px solid black;
+	border-radius: 100%; */
 }
 
 #moviePoster {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 #movieTitle {
-  margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 #movieTitle > .row {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 #moviePlot {
-  font-size: 1.5em;
-  margin-top: 0;
-  margin-bottom: 3em;
+	font-size: 1.5em;
+	margin-top: 0;
+	margin-bottom: 3em;
 }
 
 .movieInfo {
-  font-size: 1.2em;
-  padding: 0 0.75em;
-  line-height: 2;
+	font-size: 1.2em;
+	padding: 0 0.75em;
+	line-height: 2;
 }
 
 .movieInfo > .col.s12 {
-  padding-left: 0;
+	padding-left: 0;
 }
 
 .unchecked {
-  color: #ead2ad;
+	color: #ead2ad;
 }
 
 .checked {
-  color: orange;
+	color: orange;
 }

@@ -1,49 +1,49 @@
 .App {
-  font-family: sans-serif;
-  text-align: center;
+	font-family: sans-serif;
+	text-align: center;
 }
 
 body {
-  background-image: url("https://cdn-images-1.medium.com/max/2000/0*z9WXKtzmXIvVj6UK.");
-  background-attachment: fixed;
+	background-image: url('https://cdn-images-1.medium.com/max/2000/0*z9WXKtzmXIvVj6UK.');
+	background-attachment: fixed;
 }
 .displayElements.modal-open {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
 }
 
 #searchMovies {
-  color: #ffffff;
+	color: #ffffff;
 }
 
 .pageTitle {
-  font-family: "Montserrat";
+	font-family: 'Montserrat';
 }
 
 .flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .flex > .col {
-  margin: 0;
-  padding-top: 0.7em;
-  padding-bottom: 0.7em;
+	margin: 0;
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
 }
 
 .movieTitle {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.hoverable > img {
-  max-width: 297.5px !important;
-  min-width: 297.5px;
-  max-height: 448.27px;
-  min-height: 448.27px;
+.responsive-img {
+	max-width: 297.5px !important;
+	min-width: 297.5px;
+	max-height: 448.27px;
+	min-height: 448.27px;
 }
