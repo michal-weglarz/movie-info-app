@@ -47,3 +47,8 @@ body {
 	max-height: 448.27px;
 	min-height: 448.27px;
 }
+
+.responsive-img:hover {
+	border: 3px solid orange;
+	cursor: pointer;
+}

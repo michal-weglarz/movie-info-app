@@ -24,6 +24,7 @@ class MovieModal extends React.Component {
 			.then(response => response.json())
 			.then(result => {
 				if (this.props.movieID != prevProps.movieID) {
+					console.log('UPDATED AND FETCHED');
 					this.setState({
 						movieDetails: result,
 					});
@@ -41,12 +42,6 @@ class MovieModal extends React.Component {
 			});
 		}
 	}
-
-	getMovieDetails = movieId => {
-		fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${this.props.movieID}`)
-			.then(response => response.json())
-			.then(result => result);
-	};
 
 	getMovieStars = rating => {
 		let imdbRating = rating.imdbRating;
@@ -74,7 +69,6 @@ class MovieModal extends React.Component {
 
 	render() {
 		let movieDetails = this.state.movieDetails;
-		console.log('this.state', this.state.movieDetails);
 
 		return (
 			<Modal

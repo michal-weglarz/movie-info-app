@@ -19,15 +19,12 @@ class DisplayElements extends React.Component {
 
 	render() {
 		let foundMovies = this.props.data;
-		console.log('state of display element', this.state.movieID);
+		console.log('state of display element', foundMovies);
 		return (
 			<div className="container displayElements">
 				<div className="row flex">
 					{foundMovies.map(movie => (
-						<div
-							className="col hoverable"
-							onClick={this.updateMovieID.bind(this, movie)}
-						>
+						<div className="col" onClick={this.updateMovieID.bind(this, movie)}>
 							<MovieModal
 								movieID={this.state.movieID}
 								domElement={
