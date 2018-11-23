@@ -7,7 +7,7 @@ class DisplayElements extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			movieID: [],
+			movieID: '',
 		};
 	}
 

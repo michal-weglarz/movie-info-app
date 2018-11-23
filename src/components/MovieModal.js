@@ -34,6 +34,14 @@ class MovieModal extends React.Component {
 			});
 	}
 
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.movieID != this.props.movieID) {
+			this.setState({
+				movieDetails: [],
+			});
+		}
+	}
+
 	getMovieDetails = movieId => {
 		fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${this.props.movieID}`)
 			.then(response => response.json())
@@ -49,14 +57,16 @@ class MovieModal extends React.Component {
 
 		if (!isNaN(wholeNumber)) {
 			stars = Array.apply(null, Array(wholeNumber)).map(_ => (
-				<i class="material-icons checkd">star</i>
+				<i className="material-icons checked">star</i>
 			));
 			uncheckedStars = Array.apply(null, Array(5 - Math.ceil(starRating))).map(
-				_ => <i class="material-icons unchecked">star</i>
+				_ => <i className="material-icons unchecked">star</i>
 			);
 		}
 
-		let halfStar = fraction && <i class="material-icons checked">star_half</i>;
+		let halfStar = fraction && (
+			<i className="material-icons checked">star_half</i>
+		);
 		stars && halfStar && stars.push(halfStar);
 		let result = (stars, uncheckedStars) && stars.concat(uncheckedStars);
 		return result;
@@ -67,7 +77,11 @@ class MovieModal extends React.Component {
 		console.log('this.state', this.state.movieDetails);
 
 		return (
-			<Modal header={movieDetails.Title} trigger={this.props.domElement}>
+			<Modal
+				header={movieDetails.Title}
+				fixedFooter
+				trigger={this.props.domElement}
+			>
 				<div id="movieTitle">
 					<div className="row">
 						<div className="col">{movieDetails.Year}</div>
@@ -77,7 +91,13 @@ class MovieModal extends React.Component {
 				</div>
 				<div className="row modalBox">
 					<div className="col s12 m6 l4">
-						<img src={movieDetails.Poster} id="moviePoster" />
+						<img
+							src={movieDetails.Poster}
+							id="moviePoster"
+							onError={() => {
+								console.log('error');
+							}}
+						/>
 					</div>
 
 					<div className="col s12 m6 l8">
