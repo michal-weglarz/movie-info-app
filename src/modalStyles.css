@@ -37,10 +37,7 @@
 #moviePoster {
 	height: 100%;
 	width: 100%;
-}
-
-.movieModalPhoto {
-	padding-left: 0 !important;
+	padding: auto;
 }
 
 .movieModalInfo {
