@@ -24,7 +24,6 @@ class MovieModal extends React.Component {
 			.then(response => response.json())
 			.then(result => {
 				if (this.props.movieID != prevProps.movieID) {
-					console.log('UPDATED AND FETCHED');
 					this.setState({
 						movieDetails: result,
 					});
@@ -84,7 +83,7 @@ class MovieModal extends React.Component {
 					</div>
 				</div>
 				<div className="row modalBox">
-					<div className="col s12 m6 l4">
+					<div className="col s12 m6 l4 movieModalPhoto">
 						<img
 							src={movieDetails.Poster}
 							id="moviePoster"
@@ -94,11 +93,11 @@ class MovieModal extends React.Component {
 						/>
 					</div>
 
-					<div className="col s12 m6 l8">
+					<div className="col s12 m6 l8 movieModalInfo">
 						<p id="moviePlot">{movieDetails.Plot}</p>
 
 						<div className="row movieInfo">
-							<div className="col s12">
+							<div className="col s12 movieStarRating">
 								{this.getMovieStars(movieDetails)}
 								{movieDetails.imdbRating}
 							</div>

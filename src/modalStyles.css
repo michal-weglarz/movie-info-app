@@ -1,6 +1,19 @@
 .modal {
 	font-family: 'Montserrat';
 	z-index: 9999;
+	background-color: #fafafa;
+}
+
+.modal-footer {
+	background-color: #fafafa !important;
+}
+
+.btn-flat:hover {
+	background-color: #e0e0e0;
+}
+
+.modal-content {
+	padding-bottom: 0 !important;
 }
 
 .modal > .row {
@@ -26,6 +39,14 @@
 	width: 100%;
 }
 
+.movieModalPhoto {
+	padding-left: 0 !important;
+}
+
+.movieModalInfo {
+	padding-right: 0 !important;
+}
+
 #movieTitle {
 	margin-bottom: 2em;
 }
@@ -37,17 +58,22 @@
 #moviePlot {
 	font-size: 1.5em;
 	margin-top: 0;
-	margin-bottom: 3em;
 }
 
 .movieInfo {
 	font-size: 1.2em;
-	padding: 0 0.75em;
+	padding-left: 0.75em;
+	padding-right: 0;
+	margin-bottom: 0;
 	line-height: 2;
 }
 
-.movieInfo > .col.s12 {
-	padding-left: 0;
+.movieStarRating {
+	padding-left: 0 !important;
+}
+
+.material-icons {
+	font-size: 1.5em;
 }
 
 .unchecked {
@@ -55,7 +81,7 @@
 }
 
 .checked {
-	color: orange;
+	color: #ffa500;
 }
 
 .modalBox {
