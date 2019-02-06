@@ -19,7 +19,6 @@ class DisplayElements extends React.Component {
 
 	render() {
 		let foundMovies = this.props.data;
-		console.log('state of display element', foundMovies);
 		return (
 			<div className="container displayElements">
 				<div className="row flex">
